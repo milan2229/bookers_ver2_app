@@ -1,14 +1,39 @@
-<h1>Editing Book</h1>
-
-<%= form_with model:@book, local:true do |f| %>
-  <h4>Title</h4>
-  <%= f.text_field :title %>
-  <h4>Opinion</h4>
-  <%= f.text_area :body %>
-  <br><%= f.submit 'Update Book' %>
-<% end %>
-
-<%= link_to "Show", book_path(@book.id) %> |
-<%= link_to "Back", books_path %>
-
-<p>CopyRight Infratop.inc</p>
+<div class="container">
+  <% if @user.errors.any? %>
+  <h3><%= @user.errors.count %> errors prohibited this obj from being saved:</h3>
+  <div id="error_explanation" class="alert alert-danger">
+    <ul>
+    <% @user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+　<% end %>
+  <div class="row">
+    <div class="col-xs-3">
+      <h2>User info</h2>
+      <%= form_for(@user) do |f| %>
+      <label>Name</label>
+    　<br>
+      <%= f.text_field :name, class: "name" %>
+      <br>
+      <br>
+      <label>Image</label>
+      <br>
+      <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-image" %>
+      <br>
+      <br>
+      <label>Introduction</label>
+      <br>
+      <%= f.text_area :introduction, class: "introduction" %>
+      <br>
+      <br>
+      <br>
+      <%= f.submit "update user", class: "edit_user#{current_user.id}" %>
+        <p style="padding-left:500px;">CopyRight Infratop.inc</p>
+      <% end %>
+    </div>
+    <div class="col-xs-3 col-xs-offset-9">
+    </div>
+  </div>
+</div>

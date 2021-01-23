@@ -1,11 +1,21 @@
-<h1>welcome to Bookers !!</h1>
- 
- <li>
-     <%= link_to "login", new_user_session_path %>
- </li>
-
- <li>
-   <%= link_to "sign up", new_user_registration_path %>
- </li>
-
-
+<div class="container">
+	<div class="row">
+		<div class="col-md-offset-6 col-md-12">
+		<h1 align="center">welcome to <i class="fas fa-book"></i></i>Bookers   !!</h1>
+		<p align="center">In<i class="fas fa-book"></i>Bookers,</p>
+		<p align="center">you can share and exchange your options,inpressiond,and emotions</p>
+		<p align="center">about varioius books!</p>
+		<div align="center">
+		<%= link_to "Log in",new_user_session_path ,class: "btn btn-info col-lg-3 col-xs-offset-1 sign_in" %>
+		<br>
+		<br>
+		<%= link_to "Sing up",new_user_registration_path ,class: "btn btn-success col-lg-3 col-xs-offset-1 sign_up" %>
+		</div>
+		</div>
+		<!--<div class="row">-->
+		<!--<div class="col-xs-3 col-xs-offset-9"></div>-->
+		<!--</div>-->
+    </div>
+	</div>
+<br>
+  <p class="text-center">CopyRight Infratop.inc</p>
