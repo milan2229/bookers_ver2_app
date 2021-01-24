@@ -1,11 +1,12 @@
 <div class="container">
 	<div class="row">
-		<div class="col-lg-3">
+		<div class="col-md-3">
 		<%= render 'partial template/list', book: @book, user: @bookdetail.user %>
 		</div>
-		<div class="col-lg-9">
+		<div class="col-md-9">
+		<div class="col-md-8 offset-md-1">
 		<h2>Book detail</h2>
-		<table class="table table-striped">
+		<table class="table">
 			<thead>
 				<tr align="center">
 					<th></th>
@@ -16,8 +17,9 @@
 		     </tr>
 		     </thead>
 		     <tbody>
-		     	<tr>
-		     		<td><%= link_to @bookdetail.user.name, user_path(@bookdetail.user.id) %></td>
+
+		     	<td><%= attachment_image_tag @user, :profile_image, format:'jpeg', fallback: "no_image.jpg", size: "50x50" %><br>
+		     	<%= link_to @bookdetail.user.name, user_path(@bookdetail.user.id) %></td>
 		     		<td><%= link_to @bookdetail.title, book_path(@bookdetail.id) %></td>
 		     		<td><%= @bookdetail.body %></td>
 		     		<% if @bookdetail.user_id == current_user.id %>
@@ -27,8 +29,9 @@
 				  </tr>
 		   	</tbody>
 		 </table>
+		 </di>
 		</div>
-		<div class="col-xs-3 col-xs-offset-9">
+		
 			<p style="padding-left:500px;">CopyRight Infratop.inc</p>
 		</div>
   	</div>

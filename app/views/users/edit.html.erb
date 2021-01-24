@@ -8,13 +8,13 @@
     <% end %>
     </ul>
   </div>
-　<% end %>
+<% end %>
   <div class="row">
     <div class="col-xs-3">
       <h2>User info</h2>
       <%= form_for(@user) do |f| %>
       <label>Name</label>
-    　<br>
+    <br>
       <%= f.text_field :name, class: "name" %>
       <br>
       <br>
@@ -29,8 +29,8 @@
       <br>
       <br>
       <br>
-      <%= f.submit "update user", class: "edit_user#{current_user.id}" %>
-        <p style="padding-left:500px;">CopyRight Infratop.inc</p>
+      <%= f.submit "Update User", class: "btn btn-secondary" %>
+        <p style="text-center">CopyRight Infratop.inc</p>
       <% end %>
     </div>
     <div class="col-xs-3 col-xs-offset-9">

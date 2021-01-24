@@ -15,13 +15,13 @@
      <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-         <a class="text-muted" style="font-size: 50px;" ><%= link_to "Bookers", "/" %></a>
+         <a class="navbar-brand" href="/">Bookers</a>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
      </button>
 
  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <!--<p class="text-white">.text-white</p>-->
+      
 
     
 
@@ -31,33 +31,22 @@
 
     
   
-              <li>
-                  <%= link_to user_path(current_user.id) do %>
-                <i class="fas fa-home"></i>
-                  <span class="" style="margin-right: 20px;">Home</span>
-                  <% end %>
-              </li>
-
+             <li>
+                <%= link_to user_path(current_user.id) do %>
+                <p class="" style="color: white;"><i class="fas fa-home">Home</i></p>
+                <% end %>
+              </li>             
 
               <li>
-                   <%= link_to users_path do %>
-                    <i class="fas fa-users"></i>
-                    <span  class="" style="margin-right: 20px;">Users</span>
-                    <% end %>
+                   <a class="fas fa-users nav-link text-light" href="/users">Users</a>
               </li>
 
               <li>
-                   <%=link_to books_path do %>
-                   <i class="fas fa-book-open"></i>
-                   <span  class="" style="margin-right: 20px;">Books</span>
-                   <% end %>
+                  <a class="fas fa-book-open nav-link text-light" href="/books">Books</a>
               </li>
 
               <li>
-                   <%= link_to destroy_user_session_path, method: :delete do %>
-                   <i class="fas fa-sign-out-alt"></i>
-                   <span  class="" style="margin-right: 20px;">logout</span>
-                   <% end %>
+                   <a class="fas fa-sign-out-alt nav-link text-light" rel="nofollow" data-method="delete" href="/users/sign_out">logout</a>
               </li>
 
 
@@ -67,32 +56,20 @@
 
 
          <li>
-                <%= link_to root_path do %>
-               <i class="fas fa-home"></i>
-                <span  class="" style="margin-right: 20px;">Home</span>
-                <% end %>
+               <a class="fas fa-home nav-link text-light" href="/">Home</a>
             </li>
 
 
             <li>
-                <%= link_to homes_about_path do %>
-                <i class="fas fa-link"></i>
-                <span  class="" style="margin-right: 20px;">About</span>
-                <% end %>
+                <a class="fas fa-link nav-link text-light" href="/home/about">About</a>
+            </li>
+            
+            <li>
+                <a class="fas fa-user-plus nav-link text-light" href="/users/sign_up">sign up</a>
             </li>
 
             <li>
-                <%= link_to new_user_registration_path do %>
-                <i class="fas fa-user-plus"></i>
-                <span  class="" style="margin-right: 20px;">sign up</span>
-                <% end %>
-            </li>
-
-            <li>
-                <%= link_to new_user_session_path do %>
-                <i class="fas fa-sign-in-alt"></i>
-                <span  class="" style="margin-right: 20px;">login</span>
-                <% end %>
+                <a class="fas fa-sign-in-alt nav-link text-light" href="/users/sign_in">login</a>
             </li>
 
 

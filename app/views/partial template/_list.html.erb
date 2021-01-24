@@ -11,7 +11,7 @@
 <div>
     <h1>User info</h1>
     <%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
-    
+
     <table class="table">
       <tbody>
         <tr>
@@ -25,23 +25,21 @@
           </tbody>
     </table>
     <P class="text-center" style="border-style: groove;"><%= link_to "", edit_user_path(user),  class: "col-xs-12 btn btn-default fas fa-user-cog" %></P>
-        <!--<i class="fas fa-user-cog"></i>-->
-        
+
+
     <h2>New book</h2>
     <%= form_for(book) do |f| %>
     <label>Title</label>
     <br>
-    <%= f.text_field :title, class: "col-xs-12 book_title" %>
+    <%= f.text_field :title %>
     <br>
     <label>opinion</label>
     <br>
-    <%= f.text_area :body, class: "col-xs-12 book_body" %>
+    <%= f.text_area :body %>
       <br>
       <br>
       <br>
-      <div class="actions">
-        <%= f.submit 'Create Book', class: "btn btn-primary col-xs-12" %>
-      </div>
+      <input type="submit" name="commit" value="Create Book" class="btn btn-success" data-disable-with="Create Book">
       <% end %>
-      
+
 </div>
